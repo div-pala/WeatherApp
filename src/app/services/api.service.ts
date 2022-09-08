@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Period, Properties } from '../interfaces/forecast';
+import { Period, Properties, TopLevel } from '../interfaces/forecast';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private httpClient:HttpClient ) {}
 
-  getForecast() : Observable<Properties>{
-    return this.httpClient.get<Properties>(environment.apiEndpoint);
+  getForecast() : Observable<TopLevel>{
+    return this.httpClient.get<TopLevel>(environment.apiEndpoint);
   }
 }

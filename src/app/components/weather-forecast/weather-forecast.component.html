@@ -1,4 +1,14 @@
-<h2>{{title}}</h2>
+<h1>{{title}}</h1>
 <div *ngFor="let period of periods">
-        {{period.temperature}}        
+        <table>
+           <tr class='dayHeader'>{{period.name}} </tr>
+           <tr></tr>
+           <tr [ngStyle]="{'font-size' : '20px'}">Temperature: {{period.temperature}}{{period.temperatureUnit}}</tr>
+           <tr><br></tr>
+           <tr><img src={{period.icon}}>     </tr>
+           <tr><br></tr>
+           <tr class='dayDesc'> {{period.detailedForecast}}</tr>
+           <tr><br></tr>
+           <tr><br></tr>
+        </table>               
 </div>

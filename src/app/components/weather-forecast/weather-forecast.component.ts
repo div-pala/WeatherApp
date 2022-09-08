@@ -19,7 +19,7 @@ export class WeatherForecastComponent implements OnInit {
   }
   getApiResponse() {
     this.apiService.getForecast().subscribe((data) => {console.log(data),
-       console.log(data.periods.values),
-        this.periods = data.periods});
+       console.log(data.properties.periods),
+       this.periods = data.properties.periods});
   }
 }
